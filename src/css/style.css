@@ -70,27 +70,94 @@ body {
 }
 
 @keyframes downarrow {
-    0% { -webkit-transform: translateY(0); opacity: 0.4;}
-    100% { -webkit-transform: translateY(0.4em); opacity: 0.9;}
+  0% {
+    -webkit-transform: translateY(0);
+    opacity: 0.4;
+  }
+  100% {
+    -webkit-transform: translateY(0.4em);
+    opacity: 0.9;
+  }
 }
 
 @media (max-width: 425px) {
-    .hero {
-        height: 60vh;
-    }
+  .hero {
+    height: 60vh;
+  }
 
-    .hero h2{
-        font-size: 2.5rem;
-    }
+  .hero h2 {
+    font-size: 2.5rem;
+  }
 }
-
 
 /* About */
 
 .about {
+  max-width: var(--max-width-size);
+  margin: 0 auto;
   grid-area: about;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
 }
 
+.about .image {
+  height: 100%;
+  width: 100%;
+}
+
+.about .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20%;
+}
+
+.about .item h3 {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.about .item p {
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin: 30px 0;
+}
+
+.about .item .btn-knowmore {
+  align-self: flex-start;
+  font-size: 1.6rem;
+}
+
+.about .item .btn-knowmore:hover {
+  font-weight: 700;
+}
+
+.about .image.right {
+  background-image: url("../images/bridge.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about .image.left {
+  background-image: url("../images/landscape.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (max-width: 425px) {
+  .about.item {
+    text-align: center;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
 /* Services */
 
 .services {
